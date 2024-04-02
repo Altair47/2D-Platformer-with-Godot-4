@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://Enemies/Area2SpikeD.gd" id="1_0ix2f"]
 [ext_resource type="Texture2D" uid="uid://bj4phc7ceh37p" path="res://Sprites/Objects/tile_0068.png" id="2_ucjwu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_caotu"]
-size = Vector2(18, 9)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p4kai"]
+radius = 4.0
+height = 14.0
 
 [node name="Area2SpikeD" type="Area2D"]
 position = Vector2(135, -45)
@@ -14,7 +15,8 @@ script = ExtResource("1_0ix2f")
 texture = ExtResource("2_ucjwu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_caotu")
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_p4kai")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

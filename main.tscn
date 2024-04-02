@@ -1,14 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwoqfy01rav1"]
+[gd_scene load_steps=7 format=3 uid="uid://cwoqfy01rav1"]
 
 [ext_resource type="TileSet" uid="uid://b1hepnand3d65" path="res://new_tile_set.tres" id="1_u87ya"]
-[ext_resource type="Texture2D" uid="uid://bjk06pim3kwft" path="res://Sprites/Characters/character_0009.png" id="2_d1fk5"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="2_y8jw1"]
+[ext_resource type="PackedScene" uid="uid://cwoydlpt1y7j0" path="res://Player/player.tscn" id="2_jja8i"]
 [ext_resource type="PackedScene" uid="uid://d5n8xkiqbgs1" path="res://Enemies/enemy_bat.tscn" id="4_iqwjk"]
 [ext_resource type="PackedScene" uid="uid://dlqtpypqyi7w8" path="res://Enemies/area_2_spike_d.tscn" id="5_0dkr6"]
+[ext_resource type="PackedScene" uid="uid://bxobhyaewsomy" path="res://Player/end_flag.tscn" id="6_dwo5f"]
 [ext_resource type="PackedScene" uid="uid://da1hg5mhm88vs" path="res://Player/coin.tscn" id="6_f4l7k"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3pmq"]
-height = 24.0
 
 [node name="Main" type="Node2D"]
 
@@ -17,18 +14,7 @@ tile_set = ExtResource("1_u87ya")
 format = 2
 layer_0/tile_data = PackedInt32Array(65533, 131072, 1, 65534, 131072, 1, 65535, 131072, 1, 0, 131072, 1, 1, 131072, 1, 2, 131072, 1, 3, 131072, 1, 4, 131072, 1, 131069, 131072, 6, 131070, 131072, 6, 131071, 131072, 6, 65536, 131072, 6, 65537, 131072, 6, 65538, 131072, 6, 65539, 131072, 6, 65540, 131072, 6, 196605, 131072, 6, 196606, 131072, 6, 196607, 131072, 6, 131072, 131072, 6, 131073, 131072, 6, 131074, 131072, 6, 131075, 131072, 6, 131076, 131072, 6, -65535, 327680, 5, 5, 131072, 1, -131066, 131072, 1, -65530, 131072, 6, 6, 131072, 6, -131065, 131072, 1, -65529, 131072, 6, 7, 131072, 6, 65543, 131072, 6, 131079, 131072, 6, 131077, 131072, 6, -131061, 131072, 1, -131060, 131072, 1, -131059, 131072, 1, -65523, 131072, 6, 13, 131072, 6, 12, 131072, 6, 11, 131072, 6, -65525, 131072, 6, -65524, 131072, 6, -65520, 851968, 4, -65519, 851968, 6, -65518, 851968, 6, -65517, 851968, 6, -65516, 851968, 6, -65515, 851968, 6, -65514, 851968, 6, -65513, 851968, 6, -65512, 851968, 6, -65511, 917504, 5, -131047, 983040, 5, -196583, 851968, 4, -196582, 851968, 6, -196581, 851968, 6, -196580, 851968, 6, -196579, 851968, 6, -196578, 917504, 4, -131042, 983040, 5, -65506, 983040, 5, 30, 983040, 5, 65566, 851968, 5, 65567, 851968, 6, 65568, 851968, 6, 65569, 851968, 6, 65570, 917504, 5, 35, 917504, 5, 34, 851968, 4, -65501, 851968, 4, -131036, 851968, 4, -65500, 917504, 5, -196571, 851968, 4, -131035, 917504, 5, -196570, 917504, 5, -262106, 851968, 4, -262105, 851968, 6, -262104, 851968, 6, -262103, 851968, 6, -262102, 851968, 6, -262101, 851968, 6, -262100, 851968, 6, -262099, 851968, 6, -262098, 917504, 4, -196562, 917504, 1, -131026, 917504, 2, -65490, 917504, 2, 46, 917504, 2, 65582, 917504, 2, 131118, 917504, 2, 16, 983040, 5, 65552, 983040, 5, 131088, 983040, 5, 196624, 983040, 5, 262160, 983040, 5, 327696, 983040, 5, -1, 1114112, 6, -131073, 1114112, 4, -65537, 1114112, 5, 131078, 131072, 6, 65542, 131072, 6, 65541, 131072, 6)
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(-17, -99)
-script = ExtResource("2_y8jw1")
-
-[node name="Spirte" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_d1fk5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_x3pmq")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+[node name="Player" parent="." instance=ExtResource("2_jja8i")]
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("4_iqwjk")]
 position = Vector2(69, -35)
@@ -45,6 +31,22 @@ move_dir = Vector2(0, -45)
 
 [node name="Area2SpikeD" parent="." instance=ExtResource("5_0dkr6")]
 
+[node name="Area2SpikeD2" parent="." instance=ExtResource("5_0dkr6")]
+position = Vector2(225, -45)
+
+[node name="Area2SpikeD3" parent="." instance=ExtResource("5_0dkr6")]
+position = Vector2(442, -31)
+rotation = -1.57079
+
+[node name="Area2SpikeD4" parent="." instance=ExtResource("5_0dkr6")]
+position = Vector2(567, 10)
+
+[node name="Area2SpikeD5" parent="." instance=ExtResource("5_0dkr6")]
+position = Vector2(583, 10)
+
+[node name="Area2SpikeD6" parent="." instance=ExtResource("5_0dkr6")]
+position = Vector2(599, 10)
+
 [node name="Coin" parent="." instance=ExtResource("6_f4l7k")]
 position = Vector2(28, -30)
 
@@ -59,3 +61,6 @@ position = Vector2(351, -73)
 
 [node name="Coin5" parent="." instance=ExtResource("6_f4l7k")]
 position = Vector2(467, -92)
+
+[node name="EndFlag" parent="." instance=ExtResource("6_dwo5f")]
+next_scene = "res://scene2.tscn"
