@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://da1hg5mhm88vs"]
+
+[ext_resource type="Script" path="res://Player/Coin.gd" id="1_iyld2"]
+[ext_resource type="Texture2D" uid="uid://ydbe1tyhvygu" path="res://Sprites/Objects/tile_0151.png" id="2_gchww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05wqo"]
+size = Vector2(12, 12)
+
+[node name="Coin" type="Area2D"]
+position = Vector2(15, -31)
+script = ExtResource("1_iyld2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_gchww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_05wqo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

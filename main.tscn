@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwoqfy01rav1"]
+[gd_scene load_steps=8 format=3 uid="uid://cwoqfy01rav1"]
 
 [ext_resource type="TileSet" uid="uid://b1hepnand3d65" path="res://new_tile_set.tres" id="1_u87ya"]
 [ext_resource type="Texture2D" uid="uid://bjk06pim3kwft" path="res://Sprites/Characters/character_0009.png" id="2_d1fk5"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2_y8jw1"]
 [ext_resource type="PackedScene" uid="uid://d5n8xkiqbgs1" path="res://Enemies/enemy_bat.tscn" id="4_iqwjk"]
+[ext_resource type="PackedScene" uid="uid://dlqtpypqyi7w8" path="res://Enemies/area_2_spike_d.tscn" id="5_0dkr6"]
+[ext_resource type="PackedScene" uid="uid://da1hg5mhm88vs" path="res://Player/coin.tscn" id="6_f4l7k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3pmq"]
 height = 24.0
@@ -29,7 +31,7 @@ shape = SubResource("CapsuleShape2D_x3pmq")
 zoom = Vector2(3, 3)
 
 [node name="Enemy_Bat" parent="." instance=ExtResource("4_iqwjk")]
-position = Vector2(86, -29)
+position = Vector2(69, -35)
 
 [node name="Enemy_Bat2" parent="." instance=ExtResource("4_iqwjk")]
 position = Vector2(176, -25)
@@ -40,3 +42,20 @@ position = Vector2(273, 3)
 [node name="Enemy_Bat4" parent="." instance=ExtResource("4_iqwjk")]
 position = Vector2(572, -21)
 move_dir = Vector2(0, -45)
+
+[node name="Area2SpikeD" parent="." instance=ExtResource("5_0dkr6")]
+
+[node name="Coin" parent="." instance=ExtResource("6_f4l7k")]
+position = Vector2(28, -30)
+
+[node name="Coin2" parent="." instance=ExtResource("6_f4l7k")]
+position = Vector2(114, -51)
+
+[node name="Coin3" parent="." instance=ExtResource("6_f4l7k")]
+position = Vector2(225, -61)
+
+[node name="Coin4" parent="." instance=ExtResource("6_f4l7k")]
+position = Vector2(351, -73)
+
+[node name="Coin5" parent="." instance=ExtResource("6_f4l7k")]
+position = Vector2(467, -92)
