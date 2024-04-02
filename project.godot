@@ -21,6 +21,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=640
 window/vsync/vsync_mode=0
 
+[editor]
+
+movie_writer/movie_file="C:/Users/devil/Projects/Games/2D-Platformer-with-Godot-4/showcase.avi"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
