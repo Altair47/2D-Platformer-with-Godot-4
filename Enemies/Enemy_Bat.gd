@@ -1,5 +1,5 @@
 extends Area2D
-
+@onready var anim = $AnimatedSprite2D
 @export var move_speed : float = 30.0
 @export var move_dir : Vector2
 
@@ -8,6 +8,7 @@ var target_pos : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	anim.play("default")
 	start_pos = global_position
 	target_pos = start_pos + move_dir
 

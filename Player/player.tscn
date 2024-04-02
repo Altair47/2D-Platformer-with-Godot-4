@@ -1,7 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwoydlpt1y7j0"]
+[gd_scene load_steps=7 format=3 uid="uid://cwoydlpt1y7j0"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_j23f7"]
-[ext_resource type="Texture2D" uid="uid://bjk06pim3kwft" path="res://Sprites/Characters/character_0009.png" id="2_e3h0y"]
+[ext_resource type="Texture2D" uid="uid://0ew6wvxah47o" path="res://Sprites/Characters/character_0007.png" id="3_8jvxw"]
+[ext_resource type="Texture2D" uid="uid://cdqw5kifbyiuj" path="res://Sprites/Characters/character_0006.png" id="4_15p6q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nv5sq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8jvxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_15p6q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3pmq"]
 height = 24.0
@@ -16,8 +31,9 @@ outline_color = Color(0, 0, 0, 1)
 position = Vector2(-17, -99)
 script = ExtResource("1_j23f7")
 
-[node name="Spirte" type="Sprite2D" parent="."]
-texture = ExtResource("2_e3h0y")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nv5sq")
+frame_progress = 0.99894
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_x3pmq")
